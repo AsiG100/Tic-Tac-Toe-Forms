@@ -1,0 +1,9 @@
+c:\users\16zam\documents\visual studio 2017\Projects\C17 Ex05 Zamir 305701799 Asaf 305708356\Tic_Tac_Toe_UI\bin\Debug\Tic_Tac_Toe_UI.exe
+c:\users\16zam\documents\visual studio 2017\Projects\C17 Ex05 Zamir 305701799 Asaf 305708356\Tic_Tac_Toe_UI\bin\Debug\Tic_Tac_Toe_UI.pdb
+c:\users\16zam\documents\visual studio 2017\Projects\C17 Ex05 Zamir 305701799 Asaf 305708356\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_UI.Properties.Resources.resources
+c:\users\16zam\documents\visual studio 2017\Projects\C17 Ex05 Zamir 305701799 Asaf 305708356\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_WindowGame.csproj.GenerateResource.Cache
+c:\users\16zam\documents\visual studio 2017\Projects\C17 Ex05 Zamir 305701799 Asaf 305708356\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_UI.exe
+c:\users\16zam\documents\visual studio 2017\Projects\C17 Ex05 Zamir 305701799 Asaf 305708356\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_UI.pdb
+c:\users\16zam\documents\visual studio 2017\Projects\C17 Ex05 Zamir 305701799 Asaf 305708356\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_WindowGame.csprojResolveAssemblyReference.cache
+c:\users\16zam\documents\visual studio 2017\Projects\C17 Ex05 Zamir 305701799 Asaf 305708356\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_WindowGame.FormGameSettings.resources
+c:\users\16zam\documents\visual studio 2017\Projects\C17 Ex05 Zamir 305701799 Asaf 305708356\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_UI.TicTacToeGameWindow.resources
