@@ -7,11 +7,6 @@ namespace Tic_Tac_Toe_WindowGame
 {
     public partial class FormGameSettings : Form
     {
-        public enum GameSymbols
-        {
-            X,
-            O
-        }
 
         public FormGameSettings()
         {
@@ -88,41 +83,27 @@ namespace Tic_Tac_Toe_WindowGame
             {
                 Hide();
 
-                PlayerDetails player1 = new PlayerDetails();
-                PlayerDetails player2 = new PlayerDetails();
-                TicTacToeGameWindow gameWindow = new TicTacToeGameWindow();
-
-                player1.m_PlayerSymbol = (char)GameSymbols.X;
-                player2.m_PlayerSymbol = (char) GameSymbols.O;
-
-                player1.m_Name = textBoxPlayer1Name.Text;
-
+                PlayerDetails player1 = new PlayerDetails(textBoxPlayer1Name.Text,PlayerDetails.s_Symbols[0]);
+                PlayerDetails player2;
+             
                 // Single-player mode
                 if (checkBoxPlayer2.Checked == false)
                 {
-                    player2.m_Name = "Computer";
-
+                     player2 = new PlayerDetails("Computer",PlayerDetails.s_Symbols[1]);
                 }
                 // Multi-player mode
                 else
                 {
-                    player2.Name = textBoxPlayer2Name.Text;
+                     player2 = new PlayerDetails(textBoxPlayer2Name.Text, PlayerDetails.s_Symbols[1]);
                 }
 
+                TicTacToeGameWindow gameWindow = new TicTacToeGameWindow(NumericUpDownColumnNumber, player1, player2);
 
-                //gameWindow.Enabled = true;
-                //gameWindow.ShowDialog();
+                gameWindow.Enabled = true;
+                gameWindow.ShowDialog();
 
-                //gameWindow.TicTacToeGameWindow_CreateTableSize(numericUpDownColumnNumber);
 
             }
         }
-
-        private void textBoxPlayer2Name_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }

@@ -42,6 +42,7 @@ namespace Tic_Tac_Toe_WindowGame
             this.labelColumns = new System.Windows.Forms.Label();
             this.numericUpDownColumnNumber = new System.Windows.Forms.NumericUpDown();
             this.buttonStartGame = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRowNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColumnNumber)).BeginInit();
             this.SuspendLayout();
@@ -50,9 +51,10 @@ namespace Tic_Tac_Toe_WindowGame
             // 
             this.labelHeadingPlayers.AutoSize = true;
             this.labelHeadingPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeadingPlayers.Location = new System.Drawing.Point(12, 9);
+            this.labelHeadingPlayers.Location = new System.Drawing.Point(9, 7);
+            this.labelHeadingPlayers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHeadingPlayers.Name = "labelHeadingPlayers";
-            this.labelHeadingPlayers.Size = new System.Drawing.Size(78, 20);
+            this.labelHeadingPlayers.Size = new System.Drawing.Size(67, 17);
             this.labelHeadingPlayers.TabIndex = 0;
             this.labelHeadingPlayers.Text = "Players:";
             this.labelHeadingPlayers.Click += new System.EventHandler(this.label1_Click);
@@ -61,9 +63,10 @@ namespace Tic_Tac_Toe_WindowGame
             // 
             this.labelPlayer1.AutoSize = true;
             this.labelPlayer1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPlayer1.Location = new System.Drawing.Point(42, 38);
+            this.labelPlayer1.Location = new System.Drawing.Point(32, 31);
+            this.labelPlayer1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPlayer1.Name = "labelPlayer1";
-            this.labelPlayer1.Size = new System.Drawing.Size(75, 20);
+            this.labelPlayer1.Size = new System.Drawing.Size(64, 17);
             this.labelPlayer1.TabIndex = 2;
             this.labelPlayer1.Text = "Player 1:";
             // 
@@ -71,9 +74,10 @@ namespace Tic_Tac_Toe_WindowGame
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(72, 68);
+            this.label2.Location = new System.Drawing.Point(54, 55);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 20);
+            this.label2.Size = new System.Drawing.Size(58, 17);
             this.label2.TabIndex = 3;
             this.label2.Text = "Playes1";
             // 
@@ -81,9 +85,10 @@ namespace Tic_Tac_Toe_WindowGame
             // 
             this.checkBoxPlayer2.AutoSize = true;
             this.checkBoxPlayer2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxPlayer2.Location = new System.Drawing.Point(46, 67);
+            this.checkBoxPlayer2.Location = new System.Drawing.Point(34, 54);
+            this.checkBoxPlayer2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.checkBoxPlayer2.Name = "checkBoxPlayer2";
-            this.checkBoxPlayer2.Size = new System.Drawing.Size(97, 24);
+            this.checkBoxPlayer2.Size = new System.Drawing.Size(83, 21);
             this.checkBoxPlayer2.TabIndex = 4;
             this.checkBoxPlayer2.Text = "Player 2:";
             this.checkBoxPlayer2.UseVisualStyleBackColor = true;
@@ -92,9 +97,10 @@ namespace Tic_Tac_Toe_WindowGame
             // textBoxPlayer1Name
             // 
             this.textBoxPlayer1Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPlayer1Name.Location = new System.Drawing.Point(149, 34);
+            this.textBoxPlayer1Name.Location = new System.Drawing.Point(112, 28);
+            this.textBoxPlayer1Name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxPlayer1Name.Name = "textBoxPlayer1Name";
-            this.textBoxPlayer1Name.Size = new System.Drawing.Size(162, 24);
+            this.textBoxPlayer1Name.Size = new System.Drawing.Size(122, 21);
             this.textBoxPlayer1Name.TabIndex = 5;
             // 
             // textBoxPlayer2Name
@@ -103,20 +109,21 @@ namespace Tic_Tac_Toe_WindowGame
             this.textBoxPlayer2Name.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.textBoxPlayer2Name.Enabled = false;
             this.textBoxPlayer2Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPlayer2Name.Location = new System.Drawing.Point(149, 64);
+            this.textBoxPlayer2Name.Location = new System.Drawing.Point(112, 52);
+            this.textBoxPlayer2Name.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxPlayer2Name.Name = "textBoxPlayer2Name";
-            this.textBoxPlayer2Name.Size = new System.Drawing.Size(162, 24);
+            this.textBoxPlayer2Name.Size = new System.Drawing.Size(122, 21);
             this.textBoxPlayer2Name.TabIndex = 6;
             this.textBoxPlayer2Name.Text = "[computer]";
-            this.textBoxPlayer2Name.TextChanged += new System.EventHandler(this.textBoxPlayer2Name_TextChanged);
             // 
             // labelHeadingBoardSize
             // 
             this.labelHeadingBoardSize.AutoSize = true;
             this.labelHeadingBoardSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHeadingBoardSize.Location = new System.Drawing.Point(12, 121);
+            this.labelHeadingBoardSize.Location = new System.Drawing.Point(9, 98);
+            this.labelHeadingBoardSize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelHeadingBoardSize.Name = "labelHeadingBoardSize";
-            this.labelHeadingBoardSize.Size = new System.Drawing.Size(108, 20);
+            this.labelHeadingBoardSize.Size = new System.Drawing.Size(92, 17);
             this.labelHeadingBoardSize.TabIndex = 7;
             this.labelHeadingBoardSize.Text = "Board Size:";
             // 
@@ -124,16 +131,18 @@ namespace Tic_Tac_Toe_WindowGame
             // 
             this.labelRows.AutoSize = true;
             this.labelRows.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelRows.Location = new System.Drawing.Point(42, 155);
+            this.labelRows.Location = new System.Drawing.Point(32, 126);
+            this.labelRows.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelRows.Name = "labelRows";
-            this.labelRows.Size = new System.Drawing.Size(56, 20);
+            this.labelRows.Size = new System.Drawing.Size(46, 17);
             this.labelRows.TabIndex = 8;
             this.labelRows.Text = "Rows:";
             this.labelRows.Click += new System.EventHandler(this.label4_Click);
             // 
             // numericUpDownRowNumber
             // 
-            this.numericUpDownRowNumber.Location = new System.Drawing.Point(104, 153);
+            this.numericUpDownRowNumber.Location = new System.Drawing.Point(78, 124);
+            this.numericUpDownRowNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDownRowNumber.Maximum = new decimal(new int[] {
             9,
             0,
@@ -145,7 +154,7 @@ namespace Tic_Tac_Toe_WindowGame
             0,
             0});
             this.numericUpDownRowNumber.Name = "numericUpDownRowNumber";
-            this.numericUpDownRowNumber.Size = new System.Drawing.Size(46, 22);
+            this.numericUpDownRowNumber.Size = new System.Drawing.Size(34, 20);
             this.numericUpDownRowNumber.TabIndex = 9;
             this.numericUpDownRowNumber.Value = new decimal(new int[] {
             3,
@@ -158,15 +167,17 @@ namespace Tic_Tac_Toe_WindowGame
             // 
             this.labelColumns.AutoSize = true;
             this.labelColumns.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelColumns.Location = new System.Drawing.Point(179, 155);
+            this.labelColumns.Location = new System.Drawing.Point(134, 126);
+            this.labelColumns.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelColumns.Name = "labelColumns";
-            this.labelColumns.Size = new System.Drawing.Size(80, 20);
+            this.labelColumns.Size = new System.Drawing.Size(66, 17);
             this.labelColumns.TabIndex = 10;
             this.labelColumns.Text = "Columns:";
             // 
             // numericUpDownColumnNumber
             // 
-            this.numericUpDownColumnNumber.Location = new System.Drawing.Point(265, 153);
+            this.numericUpDownColumnNumber.Location = new System.Drawing.Point(199, 124);
+            this.numericUpDownColumnNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDownColumnNumber.Maximum = new decimal(new int[] {
             9,
             0,
@@ -178,7 +189,7 @@ namespace Tic_Tac_Toe_WindowGame
             0,
             0});
             this.numericUpDownColumnNumber.Name = "numericUpDownColumnNumber";
-            this.numericUpDownColumnNumber.Size = new System.Drawing.Size(46, 22);
+            this.numericUpDownColumnNumber.Size = new System.Drawing.Size(34, 20);
             this.numericUpDownColumnNumber.TabIndex = 11;
             this.numericUpDownColumnNumber.Value = new decimal(new int[] {
             3,
@@ -189,9 +200,10 @@ namespace Tic_Tac_Toe_WindowGame
             // 
             // buttonStartGame
             // 
-            this.buttonStartGame.Location = new System.Drawing.Point(46, 207);
+            this.buttonStartGame.Location = new System.Drawing.Point(34, 168);
+            this.buttonStartGame.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonStartGame.Name = "buttonStartGame";
-            this.buttonStartGame.Size = new System.Drawing.Size(230, 34);
+            this.buttonStartGame.Size = new System.Drawing.Size(172, 28);
             this.buttonStartGame.TabIndex = 12;
             this.buttonStartGame.Text = "Start!";
             this.buttonStartGame.UseVisualStyleBackColor = true;
@@ -199,9 +211,9 @@ namespace Tic_Tac_Toe_WindowGame
             // 
             // FormGameSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 253);
+            this.ClientSize = new System.Drawing.Size(242, 206);
             this.Controls.Add(this.buttonStartGame);
             this.Controls.Add(this.numericUpDownColumnNumber);
             this.Controls.Add(this.labelColumns);
@@ -215,6 +227,7 @@ namespace Tic_Tac_Toe_WindowGame
             this.Controls.Add(this.labelPlayer1);
             this.Controls.Add(this.labelHeadingPlayers);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormGameSettings";
@@ -242,8 +255,7 @@ namespace Tic_Tac_Toe_WindowGame
         private System.Windows.Forms.Label labelColumns;
         private System.Windows.Forms.NumericUpDown numericUpDownColumnNumber;
         private System.Windows.Forms.Button buttonStartGame;
-
-        
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 
