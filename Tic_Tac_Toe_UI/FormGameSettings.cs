@@ -97,7 +97,7 @@ namespace Tic_Tac_Toe_WindowGame
                      player2 = new PlayerDetails(textBoxPlayer2Name.Text, PlayerDetails.s_Symbols[1]);
                 }
 
-                TicTacToeGameWindow gameWindow = new TicTacToeGameWindow(NumericUpDownColumnNumber, player1, player2);
+                TicTacToeGameWindow gameWindow = new TicTacToeGameWindow((int)NumericUpDownColumnNumber.Value, player1, player2);
 
                 gameWindow.Enabled = true;
                 gameWindow.ShowDialog();
