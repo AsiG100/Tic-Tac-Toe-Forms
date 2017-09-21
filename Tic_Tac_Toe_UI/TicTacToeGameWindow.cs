@@ -25,7 +25,7 @@ namespace Tic_Tac_Toe_UI
             this.m_GameTable = new Button[rowAndColSize, rowAndColSize];
             TicTacToeGameWindow_CreateTable();
             //adjust the window to fit the buttons
-            this.ClientSize = this.ClientSize = new System.Drawing.Size(20+rowAndColSize*50, 40+rowAndColSize*45);
+            this.ClientSize = this.ClientSize = new System.Drawing.Size(20+rowAndColSize*50, 55 + rowAndColSize *45);
             TicTacToeGameWindow_createLabels(i_Player1, i_Player2);
         }
 
@@ -70,7 +70,7 @@ namespace Tic_Tac_Toe_UI
             m_Player1.Size = new System.Drawing.Size(64, 17);
             m_Player1.TabStop = false;
             m_Player1.Text = string.Format("{0}: {1}", i_Player1.Name, i_Player1.Points);
-            m_Player1.Location = new System.Drawing.Point(ClientSize.Width / 2-70, ClientSize.Height-30);
+            m_Player1.Location = new System.Drawing.Point(10, ClientSize.Height - 43);
             //player2 label
             m_Player2 = new Label();
             m_Player2.AutoSize = true;
@@ -80,7 +80,7 @@ namespace Tic_Tac_Toe_UI
             m_Player2.Size = new System.Drawing.Size(64, 17);
             m_Player2.TabStop = false;
             m_Player2.Text = string.Format("{0}: {1}",i_Player2.Name,i_Player2.Points);
-            m_Player2.Location = new System.Drawing.Point(ClientSize.Width/2-10, ClientSize.Height-30);
+            m_Player2.Location = new System.Drawing.Point(10, ClientSize.Height - 25);
             //adding labels to the window
             Controls.Add(m_Player1);
             Controls.Add(m_Player2);

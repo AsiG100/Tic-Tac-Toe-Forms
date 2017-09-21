@@ -96,9 +96,11 @@ namespace Tic_Tac_Toe_WindowGame
             this.textBoxPlayer1Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPlayer1Name.Location = new System.Drawing.Point(149, 34);
             this.textBoxPlayer1Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPlayer1Name.MaxLength = 16;
             this.textBoxPlayer1Name.Name = "textBoxPlayer1Name";
             this.textBoxPlayer1Name.Size = new System.Drawing.Size(161, 24);
             this.textBoxPlayer1Name.TabIndex = 5;
+            this.textBoxPlayer1Name.TextChanged += new System.EventHandler(this.textBoxPlayer1Name_TextChanged);
             // 
             // textBoxPlayer2Name
             // 
@@ -108,6 +110,7 @@ namespace Tic_Tac_Toe_WindowGame
             this.textBoxPlayer2Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPlayer2Name.Location = new System.Drawing.Point(149, 64);
             this.textBoxPlayer2Name.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxPlayer2Name.MaxLength = 16;
             this.textBoxPlayer2Name.Name = "textBoxPlayer2Name";
             this.textBoxPlayer2Name.Size = new System.Drawing.Size(161, 24);
             this.textBoxPlayer2Name.TabIndex = 6;

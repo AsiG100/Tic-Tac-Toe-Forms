@@ -19,7 +19,6 @@ C:\Users\USER\Documents\GitHub\Tic-Tac-Toe-Forms\Tic_Tac_Toe_UI\bin\Debug\Tic_Ta
 C:\Users\USER\Documents\GitHub\Tic-Tac-Toe-Forms\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_WindowGame.csprojResolveAssemblyReference.cache
 C:\Users\16zam\Documents\GitHub\Tic-Tac-Toe-Forms\Tic_Tac_Toe_UI\bin\Debug\Tic_Tac_Toe_UI.exe
 C:\Users\16zam\Documents\GitHub\Tic-Tac-Toe-Forms\Tic_Tac_Toe_UI\bin\Debug\Tic_Tac_Toe_UI.pdb
-C:\Users\16zam\Documents\GitHub\Tic-Tac-Toe-Forms\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_WindowGame.csprojResolveAssemblyReference.cache
 C:\Users\16zam\Documents\GitHub\Tic-Tac-Toe-Forms\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_WindowGame.FormGameSettings.resources
 C:\Users\16zam\Documents\GitHub\Tic-Tac-Toe-Forms\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_UI.Properties.Resources.resources
 C:\Users\16zam\Documents\GitHub\Tic-Tac-Toe-Forms\Tic_Tac_Toe_UI\obj\Debug\Tic_Tac_Toe_UI.TicTacToeGameWindow.resources
