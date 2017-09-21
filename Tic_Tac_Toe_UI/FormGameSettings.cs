@@ -94,5 +94,10 @@ namespace Tic_Tac_Toe_WindowGame
         {
             Application.Exit();
         }
+
+        private void textBoxPlayer1Name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
