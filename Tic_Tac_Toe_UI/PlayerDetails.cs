@@ -15,12 +15,6 @@ namespace Tic_Tac_Toe_WindowGame
             m_Points = 0;
             m_PlayerSymbol = i_PlayerSymbol;
         }
-        public PlayerDetails()
-        {
-            m_Name = string.Empty;
-            m_Points = 0;
-            m_PlayerSymbol = ' ';
-        }
 
         public string Name
         {

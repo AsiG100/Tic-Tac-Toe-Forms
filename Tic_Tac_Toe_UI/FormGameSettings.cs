@@ -28,15 +28,6 @@ namespace Tic_Tac_Toe_WindowGame
                 return numericUpDownColumnNumber;
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void checkBoxPlayer2_CheckedChanged(object sender, EventArgs e)
         {
@@ -52,11 +43,6 @@ namespace Tic_Tac_Toe_WindowGame
                 textBoxPlayer2Name.BackColor = Color.DarkGray;
                 textBoxPlayer2Name.Text = "[Computer]";
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void numericUpDownRowNumber_ValueChanged(object sender, EventArgs e)
@@ -83,13 +69,13 @@ namespace Tic_Tac_Toe_WindowGame
             {
                 Hide();
 
-                PlayerDetails player1 = new PlayerDetails(textBoxPlayer1Name.Text,PlayerDetails.s_Symbols[0]);
+                PlayerDetails player1 = new PlayerDetails(textBoxPlayer1Name.Text, PlayerDetails.s_Symbols[0]);
                 PlayerDetails player2;
              
                 // Single-player mode
                 if (checkBoxPlayer2.Checked == false)
                 {
-                     player2 = new PlayerDetails("Computer",PlayerDetails.s_Symbols[1]);
+                     player2 = new PlayerDetails("Computer", PlayerDetails.s_Symbols[1]);
                 }
                 // Multi-player mode
                 else
@@ -100,9 +86,7 @@ namespace Tic_Tac_Toe_WindowGame
                 TicTacToeGameWindow gameWindow = new TicTacToeGameWindow((int)NumericUpDownColumnNumber.Value, player1, player2);
 
                 gameWindow.Enabled = true;
-                gameWindow.ShowDialog();
-
-
+                gameWindow.Show();
             }
         }
     }

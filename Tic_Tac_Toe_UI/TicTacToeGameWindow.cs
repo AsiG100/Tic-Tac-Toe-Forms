@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Forms;
 using Tic_Tac_Toe_WindowGame;
 
@@ -17,8 +13,6 @@ namespace Tic_Tac_Toe_UI
         private Button[,] m_GameTable;
         private Label m_Player1;
         private Label m_Player2;
-        private Label m_Points1;
-        private Label m_Points2;
         private PlayerDetails m_PlayerDetails1;
         private PlayerDetails m_PlayerDetails2;
 
@@ -37,7 +31,9 @@ namespace Tic_Tac_Toe_UI
             TicTacToeGameWindow_createLabels(i_Player1, i_Player2);
         }
 
-        //creates the buttons and the labels in the window 
+        /// <summary>
+        /// creates the buttons and the labels in the window 
+        /// </summary>
         public void TicTacToeGameWindow_CreateTable()
         {
             for (int i = 0; i < m_GameTable.GetLength(0); i++)
@@ -60,7 +56,11 @@ namespace Tic_Tac_Toe_UI
 
         }
 
-        //Creates lables
+        /// <summary>
+        /// Creates lables
+        /// </summary>
+        /// <param name="i_Player1"></param>
+        /// <param name="i_Player2"></param>
         private void TicTacToeGameWindow_createLabels(PlayerDetails i_Player1, PlayerDetails i_Player2)
         {
             //player1 label
@@ -124,49 +124,56 @@ would you like to play another round?", winner);
 
                 if (MessageBox.Show(output, "A win", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    TicTacToeGameWindow newGameWindow = new TicTacToeGameWindow(rowAndColSize, m_PlayerDetails1, m_PlayerDetails2);
+                    TicTacToeGameWindow newGameWindow =
+ new TicTacToeGameWindow(rowAndColSize, m_PlayerDetails1, m_PlayerDetails2);
                     newGameWindow.Enabled = true;
+                    newGameWindow.Show();
                     Close();
-                    newGameWindow.ShowDialog();
                 }
                 else
                 {
                     FormGameSettings mainMenu = new FormGameSettings();
                     mainMenu.Enabled = true;
+                    mainMenu.Show();
                     Close();
-                    mainMenu.ShowDialog();
                 }
             }
-
-            ((Button)sender).Enabled = false;
-            s_CurrentTurn++;
-
-            //A tie
-            if (isTie())
+            else
             {
-                string output = string.Format(@"
+                ((Button)sender).Enabled = false;
+                s_CurrentTurn++;
+
+                //A tie
+                if (isTie())
+                {
+                    string output = string.Format(@"
 Its a tie,
 would you like to play another round?");
 
-                if (MessageBox.Show(output, "A tie", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    TicTacToeGameWindow newGameWindow = new TicTacToeGameWindow(rowAndColSize, m_PlayerDetails1, m_PlayerDetails2);
-                    newGameWindow.Enabled = true;
-                    Close();
-                    newGameWindow.ShowDialog();
-                }
-                else
-                {
-                    FormGameSettings mainMenu = new FormGameSettings();
-                    mainMenu.Enabled = true;
-                    Close();
-                    mainMenu.ShowDialog();
+                    if (MessageBox.Show(output, "A tie", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        TicTacToeGameWindow newGameWindow = new TicTacToeGameWindow(rowAndColSize, m_PlayerDetails1, m_PlayerDetails2);
+                        newGameWindow.Enabled = true;
+                        newGameWindow.Show();
+                        Close();
+                    }
+                    else
+                    {
+                        FormGameSettings mainMenu = new FormGameSettings();
+                        mainMenu.Enabled = true;
+                        mainMenu.Show();
+                        Close();
+                    }
                 }
             }
+
+            
            
         }
 
-        //Finds if the table is full
+        /// <summary>
+        /// Finds out if the table is full
+        /// </summary>
         private bool isTie()
         {
             bool isContainingEmptyButton = true;
@@ -186,7 +193,9 @@ would you like to play another round?");
             return isContainingEmptyButton;
         }
 
-        //finds out if there is a sequence
+        /// <summary>
+        /// Finds out if there is a sequence
+        /// </summary>
         private bool isWon()
         {
             char currentSymbol = PlayerDetails.s_Symbols[s_CurrentTurn % 2];
@@ -195,6 +204,9 @@ would you like to play another round?");
             return TicTacToeLogic.checkforStraight(symbols, currentSymbol, s_CurrentTurn);
         }
 
+        /// <summary>
+        /// Makes an array of chars for the buttons symbols 
+        /// </summary>
         private char[,] toChars()
         {
             char[,] symbols = new char[rowAndColSize, rowAndColSize];
@@ -210,7 +222,10 @@ would you like to play another round?");
             return symbols;
         }
 
-        //Takes a chars array and make it identical to the texts in the buttons
+        /// <summary>
+        /// Takes a chars array and make it identical 
+        /// to the texts in the buttons
+        /// </summary>
         private void locateNewSymbolInButton(char[,] i_symbols)
         {
             for (int i = 0; i < rowAndColSize; i++)

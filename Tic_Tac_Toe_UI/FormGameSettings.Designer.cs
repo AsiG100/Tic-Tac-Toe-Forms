@@ -57,7 +57,6 @@ namespace Tic_Tac_Toe_WindowGame
             this.labelHeadingPlayers.Size = new System.Drawing.Size(67, 17);
             this.labelHeadingPlayers.TabIndex = 0;
             this.labelHeadingPlayers.Text = "Players:";
-            this.labelHeadingPlayers.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelPlayer1
             // 
@@ -137,7 +136,6 @@ namespace Tic_Tac_Toe_WindowGame
             this.labelRows.Size = new System.Drawing.Size(46, 17);
             this.labelRows.TabIndex = 8;
             this.labelRows.Text = "Rows:";
-            this.labelRows.Click += new System.EventHandler(this.label4_Click);
             // 
             // numericUpDownRowNumber
             // 
@@ -233,7 +231,6 @@ namespace Tic_Tac_Toe_WindowGame
             this.Name = "FormGameSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Game Settings";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRowNumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownColumnNumber)).EndInit();
             this.ResumeLayout(false);
