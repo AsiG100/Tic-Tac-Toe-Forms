@@ -126,7 +126,7 @@ would you like to play another round?", winner);
                         new TicTacToeGameWindow(rowAndColSize, m_PlayerDetails1, m_PlayerDetails2);
                     newGameWindow.Enabled = true;
                     newGameWindow.Show();
-                    Close();
+                    Hide();
                 }
                 else
                 {
@@ -150,19 +150,17 @@ would you like to play another round?");
 
                     if (MessageBox.Show(output, "A tie", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        Close();
                         TicTacToeGameWindow newGameWindow = new TicTacToeGameWindow(rowAndColSize, m_PlayerDetails1, m_PlayerDetails2);
                         newGameWindow.Enabled = true;
                         newGameWindow.Show();
-                        
+                        Hide();
                     }
                     else
                     {
-                        Hide();
                         TicTacToeMainMenu mainMenu = new TicTacToeMainMenu();
                         mainMenu.Enabled = true;
                         mainMenu.Show();
-                        
+                        Hide();
                     }
                 }
             }
