@@ -89,5 +89,10 @@ namespace Tic_Tac_Toe_WindowGame
                 gameWindow.Show();
             }
         }
+
+        private void FormGameSettings_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

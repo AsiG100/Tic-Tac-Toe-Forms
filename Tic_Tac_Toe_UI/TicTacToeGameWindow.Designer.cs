@@ -36,10 +36,13 @@
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuBar;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TicTacToeGameWindow";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TicTacToeGameWindow_FormClosed);
+            this.Load += new System.EventHandler(this.TicTacToeGameWindow_Load);
             this.ResumeLayout(false);
 
         }
