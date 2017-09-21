@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Windows.Forms;
 using Tic_Tac_Toe_WindowGame;
 
@@ -27,7 +25,7 @@ namespace Tic_Tac_Toe_UI
             this.m_GameTable = new Button[rowAndColSize, rowAndColSize];
             TicTacToeGameWindow_CreateTable();
             //adjust the window to fit the buttons
-            this.ClientSize = this.ClientSize = new System.Drawing.Size(20+(rowAndColSize*50), 40+(rowAndColSize*45));
+            this.ClientSize = this.ClientSize = new System.Drawing.Size(20+rowAndColSize*50, 40+rowAndColSize*45);
             TicTacToeGameWindow_createLabels(i_Player1, i_Player2);
         }
 
@@ -41,8 +39,8 @@ namespace Tic_Tac_Toe_UI
                 for (int j = 0; j < m_GameTable.GetLength(0); j++)
                 {
                     m_GameTable[i, j] = new Button();
-                    m_GameTable[i,j].Location = new System.Drawing.Point(9+(i*50), 9+(j*45));
-                    m_GameTable[i, j].Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+                    m_GameTable[i,j].Location = new System.Drawing.Point(9+i*50, 9+j*45);
+                    m_GameTable[i, j].Margin = new Padding(2, 2, 2, 2);
                     m_GameTable[i, j].Name = "button"+(i+j);
                     m_GameTable[i, j].Size = new System.Drawing.Size(50, 45);
                     m_GameTable[i, j].TabStop = false;
@@ -66,23 +64,23 @@ namespace Tic_Tac_Toe_UI
             //player1 label
             m_Player1 = new Label();
             m_Player1.AutoSize = true;
-            m_Player1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            m_Player1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            m_Player1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            m_Player1.Margin = new Padding(2, 0, 2, 0);
             m_Player1.Name = "labelPlayer1";
             m_Player1.Size = new System.Drawing.Size(64, 17);
             m_Player1.TabStop = false;
             m_Player1.Text = string.Format("{0}: {1}", i_Player1.Name, i_Player1.Points);
-            m_Player1.Location = new System.Drawing.Point((ClientSize.Width / 2)-70, ClientSize.Height-30);
+            m_Player1.Location = new System.Drawing.Point(ClientSize.Width / 2-70, ClientSize.Height-30);
             //player2 label
             m_Player2 = new Label();
             m_Player2.AutoSize = true;
-            m_Player2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            m_Player2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            m_Player2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            m_Player2.Margin = new Padding(2, 0, 2, 0);
             m_Player2.Name = "labelPlayer2";
             m_Player2.Size = new System.Drawing.Size(64, 17);
             m_Player2.TabStop = false;
             m_Player2.Text = string.Format("{0}: {1}",i_Player2.Name,i_Player2.Points);
-            m_Player2.Location = new System.Drawing.Point((ClientSize.Width/2)-10, ClientSize.Height-30);
+            m_Player2.Location = new System.Drawing.Point(ClientSize.Width/2-10, ClientSize.Height-30);
             //adding labels to the window
             Controls.Add(m_Player1);
             Controls.Add(m_Player2);
@@ -93,14 +91,14 @@ namespace Tic_Tac_Toe_UI
             if (s_CurrentTurn % 2 == 0)
             {
                 ((Button) sender).Text = m_PlayerDetails1.PlayerSymbol.ToString();
-                m_Player1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                m_Player2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                m_Player1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+                m_Player2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             }
             else
             {
                 ((Button)sender).Text = m_PlayerDetails2.PlayerSymbol.ToString();
-                m_Player1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                m_Player2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                m_Player1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+                m_Player2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             }
 
             //The computer's move if we are playing against it
@@ -125,17 +123,17 @@ would you like to play another round?", winner);
                 if (MessageBox.Show(output, "A win", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     TicTacToeGameWindow newGameWindow =
- new TicTacToeGameWindow(rowAndColSize, m_PlayerDetails1, m_PlayerDetails2);
+                        new TicTacToeGameWindow(rowAndColSize, m_PlayerDetails1, m_PlayerDetails2);
                     newGameWindow.Enabled = true;
                     newGameWindow.Show();
-                    Close();
+                    Hide();
                 }
                 else
                 {
-                    FormGameSettings mainMenu = new FormGameSettings();
+                    TicTacToeMainMenu mainMenu = new TicTacToeMainMenu();
                     mainMenu.Enabled = true;
                     mainMenu.Show();
-                    Close();
+                    Hide();
                 }
             }
             else
@@ -155,20 +153,18 @@ would you like to play another round?");
                         TicTacToeGameWindow newGameWindow = new TicTacToeGameWindow(rowAndColSize, m_PlayerDetails1, m_PlayerDetails2);
                         newGameWindow.Enabled = true;
                         newGameWindow.Show();
-                        Close();
+                        Hide();
                     }
                     else
                     {
-                        FormGameSettings mainMenu = new FormGameSettings();
+                        TicTacToeMainMenu mainMenu = new TicTacToeMainMenu();
                         mainMenu.Enabled = true;
                         mainMenu.Show();
-                        Close();
+                        Hide();
                     }
                 }
             }
 
-            
-           
         }
 
         /// <summary>
@@ -242,6 +238,15 @@ would you like to play another round?");
             }
         }
 
+        private void TicTacToeGameWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         //END
+        private void TicTacToeGameWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
