@@ -15,7 +15,7 @@ namespace Tic_Tac_Toe_WindowGame
             {
                 rowInput = randNum.Next(io_table.GetLength(0));
                 colInput = randNum.Next(io_table.GetLength(0));
-            } while (!TryInsert(i_compDetails.m_PlayerSymbol, ref io_table, rowInput, colInput));
+            } while (!TryInsert(i_compDetails.PlayerSymbol, ref io_table, rowInput, colInput));
         }
 
         //The method tries to insert to i_symbol to the desired place and returns if successful
@@ -96,13 +96,13 @@ namespace Tic_Tac_Toe_WindowGame
         //The method declairs the winner
         public static string findWinner(ref PlayerDetails io_player1, ref PlayerDetails io_player2, char i_symbol)
         {
-            if (io_player1.m_PlayerSymbol == i_symbol)
+            if (io_player1.PlayerSymbol == i_symbol)
             {
-                io_player2.m_Points++;
-                return io_player2.m_Name;
+                io_player2.Points++;
+                return io_player2.Name;
             }
-            io_player1.m_Points++;
-            return io_player1.m_Name;
+            io_player1.Points++;
+            return io_player1.Name;
         }
     }
 }

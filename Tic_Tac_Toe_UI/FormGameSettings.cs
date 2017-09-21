@@ -7,11 +7,6 @@ namespace Tic_Tac_Toe_WindowGame
 {
     public partial class FormGameSettings : Form
     {
-        public enum GameSymbols
-        {
-            X,
-            O
-        }
 
         public FormGameSettings()
         {
@@ -33,15 +28,6 @@ namespace Tic_Tac_Toe_WindowGame
                 return numericUpDownColumnNumber;
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void checkBoxPlayer2_CheckedChanged(object sender, EventArgs e)
         {
@@ -57,11 +43,6 @@ namespace Tic_Tac_Toe_WindowGame
                 textBoxPlayer2Name.BackColor = Color.DarkGray;
                 textBoxPlayer2Name.Text = "[Computer]";
             }
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void numericUpDownRowNumber_ValueChanged(object sender, EventArgs e)
@@ -88,41 +69,25 @@ namespace Tic_Tac_Toe_WindowGame
             {
                 Hide();
 
-                PlayerDetails player1 = new PlayerDetails();
-                PlayerDetails player2 = new PlayerDetails();
-                TicTacToeGameWindow gameWindow = new TicTacToeGameWindow();
-
-                player1.m_PlayerSymbol = (char)GameSymbols.X;
-                player2.m_PlayerSymbol = (char) GameSymbols.O;
-
-                player1.m_Name = textBoxPlayer1Name.Text;
-
+                PlayerDetails player1 = new PlayerDetails(textBoxPlayer1Name.Text, PlayerDetails.s_Symbols[0]);
+                PlayerDetails player2;
+             
                 // Single-player mode
                 if (checkBoxPlayer2.Checked == false)
                 {
-                    player2.m_Name = "Computer";
-
+                     player2 = new PlayerDetails("Computer", PlayerDetails.s_Symbols[1]);
                 }
                 // Multi-player mode
                 else
                 {
-                    player2.Name = textBoxPlayer2Name.Text;
+                     player2 = new PlayerDetails(textBoxPlayer2Name.Text, PlayerDetails.s_Symbols[1]);
                 }
 
+                TicTacToeGameWindow gameWindow = new TicTacToeGameWindow((int)NumericUpDownColumnNumber.Value, player1, player2);
 
-                //gameWindow.Enabled = true;
-                //gameWindow.ShowDialog();
-
-                //gameWindow.TicTacToeGameWindow_CreateTableSize(numericUpDownColumnNumber);
-
+                gameWindow.Enabled = true;
+                gameWindow.Show();
             }
         }
-
-        private void textBoxPlayer2Name_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
     }
 }
